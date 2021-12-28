@@ -21,14 +21,14 @@
           <div class="card border-0 shadow rounded-3 my-5">
             <div class="card-body p-4 p-sm-5">
               <h5 class="card-title text-center mb-5 fw-light fs-5">Sign In</h5>
-              <form>
+              <form action="loginProcess.php" method="POST">
                 <div class="form-floating mb-3">
-                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                   <label for="floatingInput">Email address</label>
+                  <input type="email" class="form-control" id="floatingInput" name="myemail" placeholder="name@example.com">
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
                   <label for="floatingPassword">Password</label>
+                  <input type="password" class="form-control" id="floatingPassword" name="mypassword" placeholder="Password">
                 </div>
   
                 <div class="form-check mb-3">

@@ -1,31 +1,42 @@
 <?php 
-    class user {
+    class UserService {
+        
         public $name;
         public $email;
-        public $institue;
+        public $institute;
         public $password;
 
-        function __construct($name, $email, $institue, $password) {
-            $this->name = $name;
+        public function __construct($email, $password) {
             $this->email = $email;
-            $this->institue = $institue;
             $this->password = $password;
         }
 
-        function get_name() {
+        public function login_info($email, $password) {
+            $this->email = $email;
+            $this->password = $password;
+        }
+
+        public function get_name() {
             return $this->name;
         }
 
-        function get_email() {
+        public function get_email() {
             return $this->email;
         }
 
-        function get_institue() {
-            return $this->institue;
+        public function get_institute() {
+            return $this->institute;
         }
 
-        function get_password() {
+        public function get_password() {
             return $this->password;
+        }
+
+        public function user_info() {
+            echo "Username: " . $this->name . "<br>";
+            echo "Email: " . $this->email . "<br>";
+            echo "Institute: " . $this->institute . "<br>";
+            echo "Password: " . $this->password . "<br>";
         }
     }
 ?>

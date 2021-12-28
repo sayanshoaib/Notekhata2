@@ -3,7 +3,6 @@
 
 if($_SERVER['REQUEST_METHOD']=='POST'){
     
-
     if(   isset($_POST['myusername']) 
        && isset($_POST['myemail'])
        && isset($_POST['myinstitute'])
@@ -13,23 +12,24 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
        && !empty($_POST['myinstitute'])
        && !empty($_POST['mypassword'])
     ){
-
+        
         $username = $_POST['myusername'];
         $email = $_POST['myemail'];
-        $institue = $_POST['myinstitue'];
+        $institute = $_POST['myinstitute'];
         $pass = $_POST['mypassword'];
-        
         
        
         try{
-            $conn=new PDO("mysql:host=localhost:3306; dbname=Notekhata;", "root", "");
+            $conn=new PDO("mysql:host=localhost:3306; dbname=Notekhata", "root", "");
             
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            echo "Connected successfully";
             
             $enc_password = md5($pass);
             
             
-            $signupquery = "INSERT INTO `userlist`(`USER_NAME`, `EMAIL`, `INSTITUE`, `PASSWORD`) VALUES ('$username','$email','$institue','$enc_password')";
+            $signupquery = "INSERT INTO `userlist`(`USER_NAME`, `EMAIL`, `INSTITUE`, `PASSWORD`) VALUES ('$username','$email',' $institute','$enc_password')";
             
             
             $conn->exec($signupquery);
@@ -42,7 +42,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         }
         catch(PDOException $ex){
             ?>
-                <script>location.assign("signup.php");</script>
+                <script>location.assign("register.php");</script>
             <?php
         }
         
@@ -50,7 +50,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     else{
        
     ?>
-        <script>location.assign("signup.php");</script>
+        <script>location.assign("register.php");</script>
     <?php
         
     } 
@@ -58,7 +58,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 else{
    
     
-    echo '<script>location.assign("signup.php");</script>';
+    echo '<script>location.assign("register.php");</script>';
 }
 
 

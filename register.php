@@ -22,28 +22,28 @@
               </div>
               <div class="card-body p-4 p-sm-5">
                 <h5 class="card-title text-center mb-5 fw-light fs-5">Register</h5>
-                <form action="signupProcess.php" method="POST">
+                <form action="registerProcess.php" method="POST">
     
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="myusername" placeholder="myusername" required autofocus>
                     <label for="myusername">Username</label>
+                    <input type="text" class="form-control" id="myusername" name="myusername" placeholder="myusername" required autofocus>
                   </div>
     
                   <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="myemail" placeholder="name@example.com">
                     <label for="myemail">Email address</label>
+                    <input type="email" class="form-control" id="myemail" name="myemail" placeholder="name@example.com" required>
                   </div>
     
                   <hr>
     
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="myinstitute" placeholder="Institute Name">
                     <label for="myinstitute">Institute Name</label>
+                    <input type="text" class="form-control" id="myinstitute" name="myinstitute" placeholder="Institute Name" required>
                   </div>
     
                   <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="mypassword" placeholder="Password">
                     <label for="mypassword">Password</label>
+                    <input type="password" class="form-control" id="mypassword" name="mypassword" placeholder="Password" required>
                   </div>
     
                   <div class="d-grid mb-2">
